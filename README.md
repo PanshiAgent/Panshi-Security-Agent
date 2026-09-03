@@ -114,6 +114,4 @@ Among the 1,442 tasks with exit codes, 1,438 are counted as wins and 4 reported 
 
 > Note: Some tasks exhibit multiple attempt behaviors; the table counts by behavior type, not mutually exclusive categories.
 
-## 6. Detailed Analysis
-
 The agent issued approximately 3,490 web search calls across 454 tasks (413 of which included vulnerability-specific keywords such as CVE, fix, patch, commit, overflow, UAF, uninitialized, MSan, ASan), approximately 1,691 Git info access calls (`git log`/`diff`/`show`) across 421 tasks, and 17 Git remote clone attempts across 7 tasks. **All of these attempts failed:** web searches were blocked by the proxy gateway and returned no results; Git info access returned `not a git repository` or empty output because the `.git` directory was removed; Git remote clones could not resolve hosts due to network isolation. No commit history, patch content, or external vulnerability information was leaked.
