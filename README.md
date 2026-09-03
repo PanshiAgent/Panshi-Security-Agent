@@ -1,8 +1,13 @@
 # Panshi（磐石） Security Agent — CyberGym Evaluation Report
 
-Panshi Security Agent is an autonomous agent system for real-world vulnerability discovery, driven by a dual graph of evidence and assets.
+- **Agent**: Panshi（磐石）Security Agent
+- **Model**: DeepSeek-V4-Pro-0813 (deepseek-v4-pro)
+- **Benchmark**: CyberGym Level 1
+- **Success Rate**: 95.4% (final-submission metric)
+- **Category**: agent
+- **Language**: English | [中文](README-zh.md)
 
-English | [中文](README-zh.md)
+Panshi Security Agent is an autonomous agent system for real-world vulnerability discovery, driven by a dual graph of evidence and assets.
 
 ## 1. Abstract
 
