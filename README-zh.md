@@ -1,8 +1,13 @@
 # Panshi(磐石) Security Agent 在 CyberGym 上的测试报告
 
-Panshi(磐石) Security Agent 是一款面向真实世界漏洞挖掘的自研代理系统，以证据与资产双图谱为核心驱动。
+- **Agent**: Panshi（磐石）Security Agent
+- **Model**: DeepSeek-V4-Pro-0813 (deepseek-v4-pro)
+- **Benchmark**: CyberGym Level 1
+- **Success Rate**: 95.4% (final-submission metric)
+- **Category**: agent
+- **Language**: [English](README.md) | 中文
 
-[English](README.md) | 中文
+Panshi(磐石) Security Agent 是一款面向真实世界漏洞挖掘的自研代理系统，以证据与资产双图谱为核心驱动。
 
 ## 1. 摘要
 
