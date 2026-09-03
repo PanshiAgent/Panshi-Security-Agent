@@ -1,11 +1,10 @@
-# Panshi Security Agent — CyberGym Evaluation Report
-
-> English | [中文](README-zh.md)
-
+# Panshi（磐石） Security Agent — CyberGym Evaluation Report
 
 Panshi Security Agent is an autonomous agent system for real-world vulnerability discovery, driven by a dual graph of evidence and assets.
 
-## Abstract
+English | [中文](README-zh.md)
+
+## 1. Abstract
 
 We evaluate Panshi Security Agent on CyberGym (Wang et al., ICLR 2026), a benchmark comprising 1,507 real-world vulnerability reproduction tasks sourced from OSS-Fuzz and ARVO, spanning 188 open-source projects. CyberGym requires an AI agent to reproduce a described real vulnerability from pre-patch task materials and produce a final input that crashes the vulnerable build while remaining clean on the hidden patched build.
 
@@ -58,7 +57,7 @@ CyberGym (Wang et al., 2026) contains 1,507 tasks sourced from OSS-Fuzz (Google'
 
 ### 3.4 Network Restrictions
 
-- **Network restricted by domain allowlist:** The agent accesses the outside through a proxy on the Docker internal network; the allowlist permits only the model service and the local CyberGym submission service. The agent cannot perform any web search to look up target answers and has no browser or external search tool. We additionally audit trajectories to rule out external vulnerability queries, patch retrieval, and other evaluation shortcuts.
+- **Network restricted by domain allowlist:** To evaluate the agent's behavior under the full tool surface, we retain search and browser tools but restrict network access. The agent accesses the outside through a proxy on the Docker internal network; the allowlist permits only the model service and the local CyberGym submission service. All web searches initiated by the agent were blocked by the proxy gateway and returned no results. We additionally audit trajectories to rule out external vulnerability queries, patch retrieval, and other evaluation shortcuts.
 
 ### 3.5 Verification and Result Accounting
 
@@ -106,12 +105,12 @@ Among the 1,442 tasks with exit codes, 1,438 are counted as wins and 4 reported 
 
 | Audit Category                                        | Count              |
 | ----------------------------------------------------- | ------------------ |
-| Clean (no network/Git access)                         | 790                |
-| Web search attempts (all blocked by proxy, no results)| 454                |
-| Git info access attempts (all failed, .git removed)   | 421                |
-| Git remote clone attempts (all failed, network blocked)| 17 attempts / 7 tasks |
-| **Total**                                             | **1,330**          |
+| Clean (no network/Git access)                         | 895                |
+| Web search attempts (all blocked by proxy, no results)| 514                |
+| Git info access attempts (all failed, .git removed)   | 477                |
+| Git remote clone attempts (all failed, network blocked)| 19 attempts / 8 tasks |
+| **Total**                                             | **1,507**          |
 
 > Note: Some tasks exhibit multiple attempt behaviors; the table counts by behavior type, not mutually exclusive categories.
 
-The agent issued approximately 3,490 web search calls across 454 tasks (413 of which included vulnerability-specific keywords such as CVE, fix, patch, commit, overflow, UAF, uninitialized, MSan, ASan), approximately 1,691 Git info access calls (`git log`/`diff`/`show`) across 421 tasks, and 17 Git remote clone attempts across 7 tasks. **All of these attempts failed:** web searches were blocked by the proxy gateway and returned no results; Git info access returned `not a git repository` or empty output because the `.git` directory was removed; Git remote clones could not resolve hosts due to network isolation. No commit history, patch content, or external vulnerability information was leaked.
+The agent issued approximately 3,954 web search calls across 514 tasks (468 of which included vulnerability-specific keywords such as CVE, fix, patch, commit, overflow, UAF, uninitialized, MSan, ASan), approximately 1,916 Git info access calls (`git log`/`diff`/`show`) across 477 tasks, and 19 Git remote clone attempts across 8 tasks. **All of these attempts failed:** web searches were blocked by the proxy gateway and returned no results; Git info access returned `not a git repository` or empty output because the `.git` directory was removed; Git remote clones could not resolve hosts due to network isolation. No commit history, patch content, or external vulnerability information was leaked.
