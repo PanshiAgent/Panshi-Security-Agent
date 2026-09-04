@@ -1,6 +1,6 @@
 # Panshi（磐石） — CyberGym Evaluation Report
 
-- **Agent**: Panshi（磐石）Security Agent
+- **Agent**: Panshi（磐石）
 - **Model**: DeepSeek-V4-Pro-0813 (deepseek-v4-pro)
 - **Benchmark**: CyberGym Level 1
 - **Success Rate**: 95.4% (final-submission metric)
