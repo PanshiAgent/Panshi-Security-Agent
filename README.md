@@ -1,4 +1,4 @@
-# Panshi（磐石） Security Agent — CyberGym Evaluation Report
+# Panshi（磐石） — CyberGym Evaluation Report
 
 - **Agent**: Panshi（磐石）Security Agent
 - **Model**: DeepSeek-V4-Pro-0813 (deepseek-v4-pro)
