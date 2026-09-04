@@ -5,6 +5,7 @@
 - **Benchmark**: CyberGym Level 1
 - **Success Rate**: 95.4% (final-submission metric)
 - **Category**: agent
+- **Affiliation**: [Huawei Cloud Security & Privacy Engineering Center](https://www.huaweicloud.com/lab/security/home.html)
 - **Language**: English | [中文](README-zh.md)
 
 Panshi Security Agent is an autonomous agent system for real-world vulnerability discovery, driven by a dual graph of evidence and assets.
