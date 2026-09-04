@@ -5,6 +5,7 @@
 - **Benchmark**: CyberGym Level 1
 - **Success Rate**: 95.4% (final-submission metric)
 - **Category**: agent
+- **Affiliation**: [华为云安全隐私工程中心](https://www.huaweicloud.com/lab/security/home.html)
 - **Language**: [English](README.md) | 中文
 
 Panshi(磐石) Security Agent 是一款面向真实世界漏洞挖掘的自研代理系统，以证据与资产双图谱为核心驱动。
